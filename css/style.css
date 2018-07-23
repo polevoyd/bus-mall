@@ -1,0 +1,33 @@
+body
+{
+    border: solid 2px orange;
+}
+#header
+{
+    position: absolute;
+    
+    /* display: block; */
+}
+
+.upperLeft
+{
+    display: inline;
+    position: relative;
+}
+
+h2
+{
+    position: absolute;
+    font-size: 5em;
+    margin-bottom: 1e
+    
+}
+
+upperRight
+{
+    position: absolute;
+    /* display: inline-block; */
+    float: right;
+}
+
+
