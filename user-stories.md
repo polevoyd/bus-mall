@@ -12,7 +12,7 @@ Plan your work, and work your plan. -->
 
 1. As a marketing research team we want all headers be clear so we can make it more optimised from a SEO perspective
 
-2. As a marketing research team we want interface be clean and usable, so potential user can quickly navigate and doesn't feel intimidated
+2. As a marketing research team we want app to translated to another languages, so our tourists can use it too
 
 3. As a marketing research team we want to have availability for app to be as intuitive as possible so user can concentrate on actual process rather than learn how to use an application
 
