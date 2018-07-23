@@ -1,8 +1,7 @@
-/* *
+*
 {
-    outline: solid 2px orange;
-    padding: 1em 1em 1em 1em;
-} */
+    /* outline: solid 2px orange; */
+}
 
 .logoElement
 {
@@ -14,14 +13,19 @@
 .headerButtons
 {
     margin-top: -3em;
-    float: right;
     margin-right: 3em;
+    float: right; 
+}
+
+button :headerButtons
+{
+    height: 20px;
 }
 
 .picturesSection
 {
     margin-top: 3em;
-    margin-left: 30em;
+    margin-left: 24em;
 }
 .picturesSelection
 {
@@ -38,15 +42,28 @@
 
 .radioSection
 {
-    margin-left: 30em;
+    margin-left: 24em;
 }
 
 
 .radioButtons
 {
-
     margin-left: 11em;
     margin-right: 11em;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.resultsSection
+{
+    font-size: 2em;
+    padding: 1em 1em 1em 1em;
+    margin-top: -10em;
+}
+
+.descriptionSection
+{
+    padding-left: 28em;
+    padding-right: 4em;
+    padding-top: 2em;
 }
