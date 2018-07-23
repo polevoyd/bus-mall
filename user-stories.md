@@ -16,7 +16,7 @@ Plan your work, and work your plan. -->
 
 3. As a marketing research team we want to have availability for app to be as intuitive as possible so user can concentrate on actual process rather than learn how to use an application
 
-4. As a marketing research team we want to have a different tabs or pages that will have a separate information about product, our company and contacts 
+4. As a marketing research team we want to have a a buttons and tabs that is big enough to use them with a touch screen 
 
 5. As a marketing research team we want app to show a 3 pictures at one page, which is give a user optimal amount of choices to vote from
 
