@@ -11,4 +11,4 @@ The marketing team is not only interested in the total number of clicks, but als
 
 You are also responsible for the look and feel of the app, so don't forget a custom font, color palette, layout with semantic HTML, and so on.
 
-![Like this](https://thumb.ibb.co/jQz1yd/wireframe.png)
+![Like this](https://preview.ibb.co/cqjC4J/wireframe.png)
