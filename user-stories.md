@@ -46,4 +46,4 @@ Plan your work, and work your plan. -->
 
 4. As a user I want to be able to see what other people are voted for, just out of curiousity
 
-5. As a user I want to have a big buttons, so users don't have to use a glasses in order to have good experience
+5. As a user I want to have a big buttons, so I don't have to use a glasses in order to see them
