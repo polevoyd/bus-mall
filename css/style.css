@@ -31,6 +31,8 @@ button :headerButtons
 {
     display: inline;
     padding: 1em 1em 1em 1em;
+    height: 300px;
+    width: 300px;
 }
 
 #voteButton
