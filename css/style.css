@@ -71,9 +71,13 @@ button :headerButtons
     margin-top: -10em;
 }
 
-.descriptionSection
+#descriptionSection
 {
     padding-left: 28em;
     padding-right: 4em;
-    padding-top: 16em;
+    /* after results on a screen */
+    /* margin-top: -23em;  */
+
+    /* before results on a screen */
+    margin-top: 16em;
 }
