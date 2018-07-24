@@ -119,15 +119,14 @@ var clicked = function()
     // display random pictures
     displayRandomPictures(imgsObj);
 
-    // display results
-    renderResults();
-
-
     // check if attempts is gone
     if (attempts === 0)
     {
-        // show alert
-        alert('Attempts done!');
+        // display results
+        renderResults();
+
+        // make button disappear
+        vote.style.display = 'none';
     }
     else
     {
@@ -178,5 +177,5 @@ for( var i=0; i < imgsArray.length; i++)
 // putting random pictures on a screen
 displayRandomPictures();
 
-// rendering results for them
-renderResults();
+// // rendering results for them
+// renderResults();
