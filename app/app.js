@@ -17,7 +17,7 @@ function ImageTracker(imgName)
     this.name = imgName.split('.'[0]);
     this.path = imgName;
     this.totalClicks = 0;
-    this.views = 0;
+    this.totalViews = 0;
 }
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -50,7 +50,9 @@ var resultsList = document.getElementById('resultsList');
 
 var description = document.getElementById('descriptionSection');
 
+// connecting a canvas for a chart
 
+var resultsChart = document.getElementById("myChart").getContext('2d');
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -85,7 +87,7 @@ function displayRandomPictures()
     // set value to prev indexes array, so when it will look it up it does not repeats
     previousImgIndexes[0] = pictureIndexOne;
     // add a view to that image object
-    imgsObj[pictureIndexOne].views++;
+    imgsObj[pictureIndexOne].totalViews++;
     
     // --------------randomize second picture-----------------
     // find out random picture from array
@@ -97,7 +99,7 @@ function displayRandomPictures()
     // set value to prev indexes array, so when it will look it up it does not repeats
     previousImgIndexes[1] = pictureIndexTwo;
     // add a view to that image object
-    imgsObj[pictureIndexTwo].views++;
+    imgsObj[pictureIndexTwo].totalViews++;
 
     // --------------randomize third picture-----------------
     // find out random picture from array
@@ -109,7 +111,7 @@ function displayRandomPictures()
     // set value to prev indexes array, so when it will look it up it does not repeats
     previousImgIndexes[2] = pictureIndexThree;
     // add a view to that image object
-    imgsObj[pictureIndexThree].views++;
+    imgsObj[pictureIndexThree].totalViews++;
 }
 
 /**********************************************************************************/
@@ -142,6 +144,9 @@ var clicked = function()
 
         // make description disappear
         description.style.opacity = 0;
+
+        // show a results chart
+        displayResultsChart();
     }
     else
     {
@@ -176,6 +181,63 @@ function renderResults()
         // connect list item to a results list
         resultsList.appendChild(tmpNode);
     }
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////CHART.JS RELATED SECTION//////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+function displayResultsChart()
+{
+    // construct arrays of names, votes and views
+
+    var imgNames = [];
+    var imgVotes = [];
+    var imgViews = [];
+
+    // array of background + border colors
+    var imgBackgroundColors = [];
+
+
+    // now filling arrays with imgs data
+    for (var img of imgsObj)
+    {
+        imgNames.push(img.name);
+        imgVotes.push(img.totalClicks);
+        imgViews.push(img.totalViews);
+    }
+
+    // filling array of background colors (each one will be random N from 0 to 255)
+
+    for (var img of imgsObj)
+    {
+        var tmpColor = `rgba(${Math.floor(Math.random() * Math.floor(255))}, ${Math.floor(Math.random() * Math.floor(255))}, ${Math.floor(Math.random() * Math.floor(255))}, 1)`;
+        imgBackgroundColors.push(tmpColor);
+    }
+
+    var myChart = new Chart(resultsChart, {
+        type: 'bar',
+        data: 
+    {
+        labels: imgNames,
+        datasets: [{
+            label: '# of Votes',
+            data: imgVotes,
+            backgroundColor: imgBackgroundColors,
+            borderColor: imgBackgroundColors,
+            borderWidth: 1
+        }]
+    },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
 }
 
 
