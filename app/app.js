@@ -87,9 +87,9 @@ function displayRandomPictures()
     // place it to a frame
     frameTwo.src = './img/' + imgsArray[pictureIndexTwo];
     // set a value of radio button as index of that image in our initial array
-    radioTwo.setAttribute('value', pictureIndexOne);
+    radioTwo.setAttribute('value', pictureIndexTwo);
     // set value to prev indexes array, so when it will look it up it does not repeats
-    previousImgIndexes[1] = pictureIndexOne;
+    previousImgIndexes[1] = pictureIndexTwo;
 
     // --------------randomize third picture-----------------
     // find out random picture from array
@@ -97,9 +97,9 @@ function displayRandomPictures()
     // place it to a frame
     frameThree.src = './img/' + imgsArray[pictureIndexThree];
     // set a value of radio button as index of that image in our initial array
-    radioThree.setAttribute('value', pictureIndexOne);
+    radioThree.setAttribute('value', pictureIndexThree);
     // set value to prev indexes array, so when it will look it up it does not repeats
-    previousImgIndexes[2] = pictureIndexOne;
+    previousImgIndexes[2] = pictureIndexThree;
 }
 
 // what happens after 'vote' clicked
