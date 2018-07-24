@@ -4,6 +4,7 @@
 var imgsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 var imgsObj = [];
 var previousImgIndexes = [undefined, undefined, undefined];
+var attempts = 25;
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -120,6 +121,19 @@ var clicked = function()
 
     // display results
     renderResults();
+
+
+    // check if attempts is gone
+    if (attempts === 0)
+    {
+        // show alert
+        alert('Attempts done!');
+    }
+    else
+    {
+        // decrement attempts
+        attempts--;
+    } 
 };
 
 // attaching event listener to a 'vote' button
