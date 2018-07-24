@@ -3,6 +3,13 @@
     /* outline: solid 2px orange; */
 }
 
+body
+{
+    font-family: 'Arvo', serif;
+}
+
+
+
 .logoElement
 {
     font-size: 4em;

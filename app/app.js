@@ -1,7 +1,7 @@
 'use strict';
 
 // array of images to fill an object
-var imgsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'usb.jpg', 'water-can.jpg', 'wine-glass.jpg'];
+var imgsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 var imgsObj = [];
 var previousImgIndexes = [undefined, undefined, undefined];
 
@@ -40,6 +40,9 @@ var radioArr = [radioOne, radioTwo, radioThree];
 
 var vote = document.getElementById('voteButton');
 
+// section to print results
+var resultsList = document.getElementById('resultsList');
+
 
 
 
@@ -61,13 +64,7 @@ function pickRandomNumber(arrayOfImages)
     return rndNumber;
 }
 
-
-
-
-
-
-
-
+/**********************************************************************************/
 // display random pictures to a page
 function displayRandomPictures()
 {
@@ -102,6 +99,7 @@ function displayRandomPictures()
     previousImgIndexes[2] = pictureIndexThree;
 }
 
+/**********************************************************************************/
 // what happens after 'vote' clicked
 var clicked = function()
 {
@@ -117,12 +115,40 @@ var clicked = function()
         }
     }
 
+    // display random pictures
     displayRandomPictures(imgsObj);
+
+    // display results
+    renderResults();
 };
 
 // attaching event listener to a 'vote' button
 vote.addEventListener('click', clicked);
 
+/**********************************************************************************/
+// render result clicks from array of objects to a page
+
+function renderResults()
+{
+    // while list has some list items - delete it
+    while (resultsList.firstChild) 
+    {
+        resultsList.removeChild(resultsList.firstChild);
+    }
+
+    // going through array of objects
+    for (var obj of imgsObj)
+    {
+        // create a list item node
+        var tmpNode = document.createElement('li');
+        // create a text node
+        var nameClicks = document.createTextNode(obj.name[0] + ': ' + obj.totalClicks);
+        // connect text node to list item
+        tmpNode.appendChild(nameClicks);
+        // connect list item to a results list
+        resultsList.appendChild(tmpNode);
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -137,3 +163,6 @@ for( var i=0; i < imgsArray.length; i++)
 
 // putting random pictures on a screen
 displayRandomPictures();
+
+// rendering results for them
+renderResults();
