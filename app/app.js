@@ -137,7 +137,7 @@ var clicked = function()
     if (attempts === 0)
     {
         // display results
-        renderResults();
+        // renderResults(); // dont need anymore since we have a fancy chart
 
         // make button disappear
         vote.style.display = 'none';
@@ -202,7 +202,7 @@ function displayResultsChart()
     // now filling arrays with imgs data
     for (var img of imgsObj)
     {
-        imgNames.push(img.name);
+        imgNames.push(img.name[0]);
         imgVotes.push(img.totalClicks);
         imgViews.push(img.totalViews);
     }
