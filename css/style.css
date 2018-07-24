@@ -1,33 +1,72 @@
-body
+*
 {
-    border: solid 2px orange;
-}
-#header
-{
-    position: absolute;
-    
-    /* display: block; */
+    /* outline: solid 2px orange; */
 }
 
-.upperLeft
+.logoElement
+{
+    font-size: 4em;
+    margin-left: 3.5em;
+    margin-top: -1em;
+}
+
+.headerButtons
+{
+    margin-top: -3em;
+    margin-right: 3em;
+    float: right; 
+}
+
+button :headerButtons
+{
+    height: 20px;
+}
+
+.picturesSection
+{
+    margin-top: 3em;
+    margin-left: 30em;
+}
+.picturesSelection
 {
     display: inline;
-    position: relative;
+    padding: 1em 1em 1em 1em;
+    height: 300px;
+    width: 300px;
 }
 
-h2
+#voteButton
 {
-    position: absolute;
-    font-size: 5em;
-    margin-bottom: 1e
-    
+    width: 70%;
+    margin-left: 20%;
+    padding: 1em 1em 1em 1em;
+    margin-top: 2em;
 }
 
-upperRight
+.radioSection
 {
-    position: absolute;
-    /* display: inline-block; */
-    float: right;
+    margin-left: 30em;
 }
 
 
+.radioButtons
+{
+    margin-left: 11em;
+    margin-right: 11em;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.resultsSection
+{
+    font-size: 2em;
+    padding: 1em 1em 1em 1em;
+    margin-top: -10em;
+}
+
+.descriptionSection
+{
+    padding-left: 28em;
+    padding-right: 4em;
+    padding-top: 2em;
+}
