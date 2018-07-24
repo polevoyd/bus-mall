@@ -42,7 +42,12 @@ var radioArr = [radioOne, radioTwo, radioThree];
 var vote = document.getElementById('voteButton');
 
 // section to print results
+
 var resultsList = document.getElementById('resultsList');
+
+// description section
+
+var description = document.getElementById('descriptionSection');
 
 
 
@@ -127,6 +132,9 @@ var clicked = function()
 
         // make button disappear
         vote.style.display = 'none';
+
+        // make description disappear
+        description.style.opacity = 0;
     }
     else
     {
