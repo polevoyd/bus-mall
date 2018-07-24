@@ -115,7 +115,11 @@ var clicked = function()
         }
     }
 
+    // display random pictures
     displayRandomPictures(imgsObj);
+
+    // display results
+    renderResults();
 };
 
 // attaching event listener to a 'vote' button
