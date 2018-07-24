@@ -17,6 +17,7 @@ function ImageTracker(imgName)
     this.name = imgName.split('.'[0]);
     this.path = imgName;
     this.totalClicks = 0;
+    this.views = 0;
 }
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -83,6 +84,8 @@ function displayRandomPictures()
     radioOne.setAttribute('value', pictureIndexOne);
     // set value to prev indexes array, so when it will look it up it does not repeats
     previousImgIndexes[0] = pictureIndexOne;
+    // add a view to that image object
+    imgsObj[pictureIndexOne].views++;
     
     // --------------randomize second picture-----------------
     // find out random picture from array
@@ -93,6 +96,8 @@ function displayRandomPictures()
     radioTwo.setAttribute('value', pictureIndexTwo);
     // set value to prev indexes array, so when it will look it up it does not repeats
     previousImgIndexes[1] = pictureIndexTwo;
+    // add a view to that image object
+    imgsObj[pictureIndexTwo].views++;
 
     // --------------randomize third picture-----------------
     // find out random picture from array
@@ -103,6 +108,8 @@ function displayRandomPictures()
     radioThree.setAttribute('value', pictureIndexThree);
     // set value to prev indexes array, so when it will look it up it does not repeats
     previousImgIndexes[2] = pictureIndexThree;
+    // add a view to that image object
+    imgsObj[pictureIndexThree].views++;
 }
 
 /**********************************************************************************/
