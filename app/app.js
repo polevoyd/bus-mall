@@ -3,6 +3,7 @@
 // array of images to fill an object
 var imgsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'usb.jpg', 'water-can.jpg', 'wine-glass.jpg'];
 var imgsObj = [];
+var previousImgIndexes = [undefined, undefined, undefined];
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -46,30 +47,59 @@ var vote = document.getElementById('voteButton');
 ////////////////////////////////FUNCTIONS DEFINITIONS/////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 
+// pick a random number from array indexes that doesn't equal to previous image
+function pickRandomNumber(arrayOfImages)
+{
+    var rndNumber = Math.floor(Math.random() * Math.floor(arrayOfImages.length));
+
+    
+    while (previousImgIndexes.includes(rndNumber)) 
+    {
+        rndNumber = Math.floor(Math.random() * Math.floor(arrayOfImages.length));
+    }
+
+    return rndNumber;
+}
+
+
+
+
+
+
+
+
 // display random pictures to a page
-function displayRandomPicture()
+function displayRandomPictures()
 {
     // --------------randomize first picture-----------------
     // find out random picture from array
-    var pictureIndexOne = Math.floor(Math.random() * Math.floor(imgsArray.length));
+    var pictureIndexOne = pickRandomNumber(imgsArray);
     // place it to a frame
     frameOne.src = './img/' + imgsArray[pictureIndexOne];
     // set a value of radio button as index of that image in our initial array
     radioOne.setAttribute('value', pictureIndexOne);
+    // set value to prev indexes array, so when it will look it up it does not repeats
+    previousImgIndexes[0] = pictureIndexOne;
     
     // --------------randomize second picture-----------------
     // find out random picture from array
-    var pictureIndexTwo = Math.floor(Math.random() * Math.floor(imgsArray.length));
+    var pictureIndexTwo = pickRandomNumber(imgsArray);
     // place it to a frame
     frameTwo.src = './img/' + imgsArray[pictureIndexTwo];
+    // set a value of radio button as index of that image in our initial array
     radioTwo.setAttribute('value', pictureIndexOne);
+    // set value to prev indexes array, so when it will look it up it does not repeats
+    previousImgIndexes[1] = pictureIndexOne;
 
     // --------------randomize third picture-----------------
     // find out random picture from array
-    var pictureIndexThree = Math.floor(Math.random() * Math.floor(imgsArray.length));
+    var pictureIndexThree = pickRandomNumber(imgsArray);
     // place it to a frame
     frameThree.src = './img/' + imgsArray[pictureIndexThree];
+    // set a value of radio button as index of that image in our initial array
     radioThree.setAttribute('value', pictureIndexOne);
+    // set value to prev indexes array, so when it will look it up it does not repeats
+    previousImgIndexes[2] = pictureIndexOne;
 }
 
 // what happens after 'vote' clicked
@@ -87,7 +117,7 @@ var clicked = function()
         }
     }
 
-    displayRandomPicture(imgsObj);
+    displayRandomPictures(imgsObj);
 };
 
 // attaching event listener to a 'vote' button
@@ -106,4 +136,4 @@ for( var i=0; i < imgsArray.length; i++)
 }
 
 // putting random pictures on a screen
-displayRandomPicture();
+displayRandomPictures();
