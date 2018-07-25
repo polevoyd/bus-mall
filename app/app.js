@@ -87,6 +87,37 @@ function pickRandomNumber(arrayOfImages)
 }
 
 /**********************************************************************************/
+
+// function to rotate picture that selected currently
+
+function rotatePicture(pictureId) 
+{
+    // switching depends on a frame ID
+    switch (pictureId) {
+    case 'picOne':
+        frameOne.style.animation = 'spin 1.5s linear infinite';
+        frameTwo.style.animationPlayState = 'paused';
+        frameThree.style.animationPlayState = 'paused';
+        break;
+    
+    case 'picTwo':
+        frameOne.style.animationPlayState = 'paused';
+        frameTwo.style.animation = 'spin 1.5s linear infinite';
+        frameThree.style.animationPlayState = 'paused';
+        break;
+
+    case 'picThree':
+        frameOne.style.animationPlayState = 'paused';
+        frameTwo.style.animationPlayState = 'paused';
+        frameThree.style.animation = 'spin 1.5s linear infinite';
+        break;
+
+    default:
+        break;
+    }
+}
+
+/**********************************************************************************/
 // display random pictures to a page
 function displayRandomPictures()
 {
@@ -140,12 +171,15 @@ function clickOnImage(event)
     {
     case 'picOne':
         radioOne.checked = true;
+        rotatePicture('picOne');
         break;
     case 'picTwo':
         radioTwo.checked = true;
+        rotatePicture('picTwo');
         break;
     case 'picThree':
         radioThree.checked = true;
+        rotatePicture('picThree');
         break;
     default:
         break;
@@ -309,6 +343,9 @@ for( var i=0; i < imgsArray.length; i++)
 
 // putting random pictures on a screen
 displayRandomPictures();
+
+// rotate first one (cause by default radio checked on first)
+rotatePicture('picOne');
 
 // // rendering results for them
 // renderResults();
