@@ -48,7 +48,7 @@ var resultsList = document.getElementById('resultsList');
 
 // description section
 
-var description = document.getElementById('descriptionSection');
+// var description = document.getElementById('descriptionSection');
 
 // connecting a canvas for a chart
 
@@ -113,6 +113,32 @@ function displayRandomPictures()
     // add a view to that image object
     imgsObj[pictureIndexThree].totalViews++;
 }
+/**********************************************************************************/
+
+
+function clickOnImage(event)
+{
+    // switcher to make a pictures clickable and 
+    // turn on same radio button under
+    switch (event.target.id) 
+    {
+    case 'picOne':
+        radioOne.checked = true;
+        break;
+    case 'picTwo':
+        radioTwo.checked = true;
+        break;
+    case 'picThree':
+        radioThree.checked = true;
+        break;
+    default:
+        break;
+    }
+}
+
+frameOne.addEventListener('click', clickOnImage);
+frameTwo.addEventListener('click', clickOnImage);
+frameThree.addEventListener('click', clickOnImage);
 
 /**********************************************************************************/
 // what happens after 'vote' clicked
@@ -143,7 +169,7 @@ var clicked = function()
         vote.style.display = 'none';
 
         // make description disappear
-        description.style.opacity = 0;
+        // description.style.opacity = 0;
 
         // show a results chart
         displayResultsChart();

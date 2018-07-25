@@ -11,65 +11,115 @@
     <script src="https://github.com/chartjs/Chart.js/releases/download/v2.7.2/Chart.min.js"></script>
     
 </head>
-<header>
 
-    <section class="headerLogo">
-        <img src="http://via.placeholder.com/200x100" alt="Placeholder">
-        <h2 class="logoElement">Title</h2>
-    </section>
+<div class="wrapper">
+        <div class="box header">
+      <!--       header box  -->
+          <img id="titleLogo" src="http://www.chinatoday.com/entertain/china.funny.pictures/110228_water_bus_2.jpg" alt="Placeholder" class="logoElement">
+            <h2 class="logoElement">BUS-MALL</h2>
+          
+            <button class="upperRight">Home</button>
+            <button class="upperRight">Products</button>
+            <button class="upperRight">About</button>
+            <button class="upperRight">Contact</button>
+        </div>
+      <!--   sidebar box -->
+        <div class="box sidebar">
+            <ul class="resultsList">
 
-    <section class="headerButtons">
-        <button class="upperRight">Home</button>
-        <button class="upperRight">Products</button>
-        <button class="upperRight">About</button>
-        <button class="upperRight">Contact</button>
-    </section>
-</header>
-<body>
-    
-    <section class="picturesSection">
+            </ul>
+        </div>
+        <div class="box content">
+          
+          
+          <table>
+          <tr>
+              <td>
+                  <img class="picturesSelection" id="picOne" src="http://via.placeholder.com/300x300" alt="picture first"/>
+              </td>
+              <td>
+                  <img class="picturesSelection" id="picTwo" src="http://via.placeholder.com/300x300" alt="picture second"/>
+              </td>
+              <td>
+                  <img class="picturesSelection" id="picThree" src="http://via.placeholder.com/300x300" alt="picture third"/>
+              </td>
+          </tr>
+          <tr>
+      
+              <td>
+                  <input class="radioButtons" id="radioOne" type="radio" name="Product" checked>
+              </td>
+              <td>
+                  <input class="radioButtons" id="radioTwo" type="radio" name="Product">
+              </td>
+              <td>
+                  <input class="radioButtons" id="radioThree" type="radio" name="Product">
+              </td>
+          </tr>
+          <tr>
+      
+              <td colspan="3">
+                  <button id="voteButton">Vote!</button>
+              </td>
+      
+          </tr>
+          <tr>
+      
+              <td colspan="3">
+                  <p id="descriptionSection">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis porttitor nibh. Integer nec hendrerit mauris, ut laoreet lacus. Fusce maximus neque quis dui tristique, eu congue eros ornare. Donec laoreet arcu vel mauris auctor egestas. Cras pellentesque massa lacus, a accumsan velit viverra quis. Nullam feugiat, nisl non vulputate malesuada, dolor ex tempor ipsum, ut placerat lectus erat quis quam. Nam vulputate tincidunt nunc vitae cursus. Ut nec vestibulum mi, vel pellentesque eros. Morbi in mauris euismod, commodo enim vitae, rutrum orci. Vivamus in purus dignissim, laoreet nibh et, porttitor enim. Mauris vitae nisl eget tortor sodales lobortis in eu magna. Fusce rhoncus consequat nibh, et pharetra augue eleifend et. Morbi a eros quis leo pharetra rutrum nec a enim. Nulla tincidunt eget diam convallis aliquet. Aliquam elementum tincidunt ex at scelerisque.</p>
+      
+              </td>
+      
+          </tr>
+      </table>
+          
+          
+          
+        </div>
+        <div class="box footer">
+        
+            <canvas id="myChart"></canvas>
+            
+        </div>
+      </div>
 
-        <img class="picturesSelection" id="picOne" src="" alt="picture first">
-        <img class="picturesSelection" id="picTwo" src="" alt="picture second">
-        <img class="picturesSelection" id="picThree" src="" alt="picture third">
 
-    </section>
-    <section class="radioSection">
 
-        <input class="radioButtons" id="radioOne" type="radio" name="Product" checked>
-        <input class="radioButtons" id="radioTwo" type="radio" name="Product">
-        <input class="radioButtons" id="radioThree" type="radio" name="Product">
 
-    </section>
 
-<section>
-    <button id="voteButton">Vote!</button>
-</section>
-    
-<section class="resultsSection">
-    <h2>Total Votes:</h2>
-    <ul id="resultsList">
 
-        <!-- <li> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
 
-        <li> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li> -->
 
-    </ul>
-</section>
-    
-<section id="descriptionSection">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis porttitor nibh. Integer nec hendrerit mauris, ut laoreet lacus. Fusce maximus neque quis dui tristique, eu congue eros ornare. Donec laoreet arcu vel mauris auctor egestas. Cras pellentesque massa lacus, a accumsan velit viverra quis. Nullam feugiat, nisl non vulputate malesuada, dolor ex tempor ipsum, ut placerat lectus erat quis quam. Nam vulputate tincidunt nunc vitae cursus. Ut nec vestibulum mi, vel pellentesque eros. Morbi in mauris euismod, commodo enim vitae, rutrum orci. Vivamus in purus dignissim, laoreet nibh et, porttitor enim. Mauris vitae nisl eget tortor sodales lobortis in eu magna. Fusce rhoncus consequat nibh, et pharetra augue eleifend et. Morbi a eros quis leo pharetra rutrum nec a enim. Nulla tincidunt eget diam convallis aliquet. Aliquam elementum tincidunt ex at scelerisque.</p>
-</section>
 
-    <canvas id="myChart">
 
-    </canvas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 <footer>
