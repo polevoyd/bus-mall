@@ -179,6 +179,9 @@ var clicked = function()
         // make button disappear
         vote.style.display = 'none';
 
+        // shut down a event listener
+        vote.removeEventListener('click', clicked);
+
         // make description disappear
         // description.style.opacity = 0;
 
