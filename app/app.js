@@ -115,7 +115,7 @@ function displayRandomPictures()
 }
 /**********************************************************************************/
 
-
+// function to execute when picture clicked (to set radio buttons checked)
 function clickOnImage(event)
 {
     // switcher to make a pictures clickable and 
@@ -135,6 +135,8 @@ function clickOnImage(event)
         break;
     }
 }
+
+// create and connect listener for that event to a pictures
 
 frameOne.addEventListener('click', clickOnImage);
 frameTwo.addEventListener('click', clickOnImage);

@@ -2,10 +2,21 @@
 *
 {
   /* outline: solid 3px orange; */
+  border-radius: 20px;
 }
 
-body {
+/* 
+#B4DC7F - green
+#7B886F - swamp
+#DAB6C4 - lavander
+#FEFFA5 - yellow
+#FFA0AC - light pink  
+*/
+
+body 
+{
   margin: 40px;
+  background-color: #FEFFA5;
 }
 
 .sidebar 
@@ -20,7 +31,8 @@ body {
 
 .header 
 {
-	grid-area: header;
+    grid-area: header;
+    font-family: 'Kirang Haerang', cursive;
 }
 
 .footer 
@@ -62,7 +74,8 @@ body {
 }
 h2
 {
-  font-size: 300%;
+  font-size: 400%;
+  padding-left: 1em;
 }
 
 .upperRight
