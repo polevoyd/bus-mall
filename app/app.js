@@ -239,15 +239,16 @@ function renderResults()
 
 function displayResultsChart()
 {
+
     // add all the data to a localStorage
 
     localStorage.setItem('chartData', JSON.stringify(imgsObj));
 
-
+    
 
     // construct arrays of names, votes and views
 
-    var imgNames = [];
+    // var imgNames = [];
     var imgVotes = [];
     var imgViews = [];
 
@@ -257,7 +258,7 @@ function displayResultsChart()
     // now filling arrays with imgs data
     for (var img of imgsObj)
     {
-        imgNames.push(img.name[0]);
+        // imgNames.push(img.name[0]);
         imgVotes.push(img.totalClicks);
         imgViews.push(img.totalViews);
     }
@@ -274,7 +275,7 @@ function displayResultsChart()
         type: 'bar',
         data: 
     {
-        labels: imgNames,
+        labels: imgsArray,
         datasets: [{
             label: '# of Votes',
             data: imgVotes,
