@@ -6,6 +6,13 @@ var imgsObj = [];
 var previousImgIndexes = [undefined, undefined, undefined];
 var attempts = 25;
 
+// checking for a localStorage entry
+
+if (localStorage.getItem('chartData'))
+{
+    imgsObj = JSON.parse(localStorage.getItem('chartData'));
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////
 /////////////////////CONSTRUCTOR FOR AN IMAGE OBJECT//////////////////////////////
@@ -232,6 +239,12 @@ function renderResults()
 
 function displayResultsChart()
 {
+    // add all the data to a localStorage
+
+    localStorage.setItem('chartData', JSON.stringify(imgsObj));
+
+
+
     // construct arrays of names, votes and views
 
     var imgNames = [];
@@ -240,7 +253,6 @@ function displayResultsChart()
 
     // array of background + border colors
     var imgBackgroundColors = [];
-
 
     // now filling arrays with imgs data
     for (var img of imgsObj)
