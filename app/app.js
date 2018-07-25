@@ -1,7 +1,7 @@
 'use strict';
 
 // array of images to fill an object
-var imgsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
+var imgsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 var imgsObj = [];
 var previousImgIndexes = [undefined, undefined, undefined];
 var attempts = 25;
@@ -115,7 +115,7 @@ function displayRandomPictures()
 }
 /**********************************************************************************/
 
-
+// function to execute when picture clicked (to set radio buttons checked)
 function clickOnImage(event)
 {
     // switcher to make a pictures clickable and 
@@ -135,6 +135,8 @@ function clickOnImage(event)
         break;
     }
 }
+
+// create and connect listener for that event to a pictures
 
 frameOne.addEventListener('click', clickOnImage);
 frameTwo.addEventListener('click', clickOnImage);
@@ -170,6 +172,9 @@ var clicked = function()
 
         // make description disappear
         // description.style.opacity = 0;
+
+        // show alert that user run out of votes
+        alert('Done! Let\'s see a results below:');
 
         // show a results chart
         displayResultsChart();
