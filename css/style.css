@@ -129,10 +129,12 @@ canvas
 .picturesSelection
 {
     display: inline;
-    padding: 1em 1em 1em 1em;
+    /* padding: 1em 1em 1em 1em; */
     border-radius: 40px;
     height: 300px;
     width: 300px;
+    /* border: solid 1px black; */
+    box-shadow: 0px 5px 15px black;
 }
 
 #voteButton
