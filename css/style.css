@@ -1,7 +1,7 @@
 
 *
 {
-  outline: solid 3px orange;
+  /* outline: solid 3px orange; */
 }
 
 body {
@@ -28,7 +28,6 @@ body {
     grid-area: footer;
     /* height: 30px; */
 }
-
 
 .wrapper 
 {
