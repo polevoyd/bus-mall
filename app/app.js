@@ -62,24 +62,33 @@ var resultsChart = document.getElementById("myChart").getContext('2d');
 // pick a random number from array indexes that doesn't equal to previous image
 function pickRandomNumber(arrayOfImages)
 {
-    var rndNumber = Math.floor(Math.random() * Math.floor(arrayOfImages.length));
+    var rt = [];
 
-    
-    while (previousImgIndexes.includes(rndNumber)) 
+    for (var i = 0; i < 3; i++)
     {
-        rndNumber = Math.floor(Math.random() * Math.floor(arrayOfImages.length));
+        var rndNumber = Math.floor(Math.random() * Math.floor(arrayOfImages.length));
+
+        while (previousImgIndexes.includes(rndNumber) || rt.includes(rndNumber)) 
+        {
+            rndNumber = Math.floor(Math.random() * Math.floor(arrayOfImages.length));
+        }
+
+        rt.push(rndNumber);
     }
 
-    return rndNumber;
+    return rt;
 }
 
 /**********************************************************************************/
 // display random pictures to a page
 function displayRandomPictures()
 {
+    // array of random indexes (3)
+    var randomImagesIndexes = pickRandomNumber(imgsArray);
+
     // --------------randomize first picture-----------------
     // find out random picture from array
-    var pictureIndexOne = pickRandomNumber(imgsArray);
+    var pictureIndexOne = randomImagesIndexes[0];
     // place it to a frame
     frameOne.src = './img/' + imgsArray[pictureIndexOne];
     // set a value of radio button as index of that image in our initial array
@@ -91,7 +100,7 @@ function displayRandomPictures()
     
     // --------------randomize second picture-----------------
     // find out random picture from array
-    var pictureIndexTwo = pickRandomNumber(imgsArray);
+    var pictureIndexTwo = randomImagesIndexes[1];
     // place it to a frame
     frameTwo.src = './img/' + imgsArray[pictureIndexTwo];
     // set a value of radio button as index of that image in our initial array
@@ -103,7 +112,7 @@ function displayRandomPictures()
 
     // --------------randomize third picture-----------------
     // find out random picture from array
-    var pictureIndexThree = pickRandomNumber(imgsArray);
+    var pictureIndexThree = randomImagesIndexes[2];
     // place it to a frame
     frameThree.src = './img/' + imgsArray[pictureIndexThree];
     // set a value of radio button as index of that image in our initial array
