@@ -118,7 +118,34 @@ function rotatePicture(pictureId)
 }
 
 /**********************************************************************************/
+
+// function to flash picture after we click vote button
+
+function flashOnSelection(radioButtonId) 
+{
+    // switching depends on a frame ID
+    switch (radioButtonId) {
+    case 'radioOne':
+        frameOne.style.animation = 'flashing 0.05s 3';
+        break;
+    
+    case 'radioTwo':
+        frameTwo.style.animation = 'flashing 0.05s 3';
+        break;
+
+    case 'radioThree':
+        frameThree.style.animation = 'flashing 0.05s 3';
+        break;
+
+    default:
+        break;
+    }
+}
+
+/**********************************************************************************/
+
 // display random pictures to a page
+
 function displayRandomPictures()
 {
     // array of random indexes (3)
@@ -201,12 +228,18 @@ var clicked = function()
     {
         if (radioBtn.checked)
         {
+            // flashOnSelection(radioBtn.id);
             // in image object with same index we increment a total click
             imgsObj[radioBtn.value].totalClicks += 1;
             // and jump out of loop
             break;
         }
     }
+    
+    // var alerttt = alert('paused!');
+    // var a = displayRandomPictures(imgsObj);
+
+    // setTimeout(displayRandomPictures, 250, imgsObj);
 
     // display random pictures
     displayRandomPictures(imgsObj);

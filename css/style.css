@@ -159,8 +159,9 @@ canvas
 
 
 
-/* defining animation  */
-@keyframes spin {
+/* defining rotation animation  */
+@keyframes spin 
+{
   0% 
   {
     transform: rotateY(0deg);
@@ -172,3 +173,16 @@ canvas
   }
 }
 
+/* defining flashing animation  */
+@keyframes flashing
+{
+    0% 
+    {
+        opacity: 1;
+    }
+    
+    100% 
+    {
+        opacity: 0;
+    }
+}
