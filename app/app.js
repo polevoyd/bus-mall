@@ -96,19 +96,19 @@ function rotatePicture(pictureId)
     switch (pictureId) {
     case 'picOne':
         frameOne.style.animation = 'spin 1.5s linear infinite';
-        frameTwo.style.animationPlayState = 'paused';
-        frameThree.style.animationPlayState = 'paused';
+        frameTwo.style.animationIterationCount = 0;
+        frameThree.style.animationIterationCount = 0;
         break;
     
     case 'picTwo':
-        frameOne.style.animationPlayState = 'paused';
+        frameOne.style.animationIterationCount = 0;
         frameTwo.style.animation = 'spin 1.5s linear infinite';
-        frameThree.style.animationPlayState = 'paused';
+        frameThree.style.animationIterationCount = 0;
         break;
 
     case 'picThree':
-        frameOne.style.animationPlayState = 'paused';
-        frameTwo.style.animationPlayState = 'paused';
+        frameOne.style.animationIterationCount = 0;
+        frameTwo.style.animationIterationCount = 0;
         frameThree.style.animation = 'spin 1.5s linear infinite';
         break;
 
